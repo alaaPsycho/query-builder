@@ -1,38 +1,220 @@
-.App {
-  text-align: center;
+*{
+  font-family: 'Montserrat', sans-serif;
+  text-decoration: none;
+  list-style: none;
+  border: none;
+  outline: none;
+  transition: all .2s linear;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+html{
+  font-size: 62.5%;
+  overflow-x:hidden;
+  scroll-behavior: smooth;
+ 
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.container{
+  margin: 2rem auto;
+  max-width: 70rem;
+  background-color:#DCDCDC;
+  padding: 2rem;
   display: flex;
   flex-direction: column;
+  gap: 3rem;
+  
+}
+
+.container .header{
+  width: 100%;
+}
+.container .header .controls{
+  width: max-content;
+  display: flex;
+  justify-content: space-around;
   align-items: center;
+  gap: 2rem;
+}
+.container .header .controls .buttons{
+margin: 0;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.container .header .controls .buttons .btn{
+margin: 0;
+text-transform: uppercase;
+font-size: 1.4rem;
+padding:.3rem .6rem;
+cursor: pointer;
+background-color: #000;
+color: #fff;
+
+}
+.container .header .controls .buttons .btn.active{
+background-color:#B03060;
+color: #fff;    }
+  
+.container .header .controls .menu{
+margin: 0;
+position: relative;
+-webkit-user-select: none; 
+-moz-user-select: none;    
+-ms-user-select: none;    
+user-select: none;        
+
+  }
+.container .header .controls .menu i{
+font-size: 1.4rem;
+cursor: pointer;
+color: #fff;
+}
+.container .header .controls .menu i.active{
+transform: rotate(180deg);
+}  
+.container .header .controls .menu .drop-down{
+position: absolute;
+background-color: #B03060;
+display: none;
+padding: 1rem;
+border-radius: .3rem;
+   } 
+   .container .header .controls .menu .drop-down.active{
+      display: block;
+           }    
+.container .header .controls .menu .drop-down p{
+font-size: 1.4rem;
+color: white;
+cursor: pointer;
+  } 
+.container .columns{
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  gap: 2rem;
+}
+.container .columns select{
+  width: 22rem;
+  background-color: transparent;
+  border-bottom: .1rem solid white;
+  color:#B03060;
+  font-size: 1.6rem;
+   }
+
+
+.container .columns select option{
+font-size: 1.6rem;
+text-align: center;
+   }   
+.container .columns select option:first{
+color: #999;
+  }     
+.container .columns  .input-container{
+position: relative;
+          }
+.container .columns  .input-container input{
+width: 22rem;
+background-color: transparent;
+border-bottom: .1rem solid white;
+color:#B03060;
+font-size: 1.4rem;
+}
+.container .columns  .input-container  i{
+position: absolute;
+right: 5%;
+top: 50%;
+transform: translateY(-50%);
+font-size: 1.4rem;
+color: #B03060;}
+
+
+
+
+
+.queryBuilder{
+ /* background-color: #000;*/
+  width: 70rem !important;
+  margin: 2rem auto !important;
+  padding: 2rem !important;
+
 }
 
-.App-link {
-  color: #61dafb;
+.ruleGroup{
+  border: none !important;
+  padding: 2rem !important;
+  background-color: #242526  !important;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.ruleGroup-combinators{
+  margin: 0 !important;
+text-transform: uppercase !important;
+font-size: 1.4rem !important;
+padding:.3rem .6rem !important;
+cursor: pointer !important;
+background-color: #B03060 !important;
+color: #fff !important;
 }
+
+
+.ruleGroup-addRule,.ruleGroup-addGroup{
+  margin: 0 1rem!important;
+  text-transform: lowercase !important;
+  font-size: 1.6rem !important;
+  padding:.3rem .6rem !important;
+  cursor: pointer !important;
+  color:#fff !important;
+  text-decoration: none !important;
+  letter-spacing: .1rem !important;
+  border-bottom: .1rem solid #B03060;
+}
+
+
+
+.ruleGroup-body{
+  width: 100% !important;
+  display: flex;
+  gap: 3rem;
+  margin: 1rem 0;
+}
+
+.rule{
+  display: flex !important;
+  gap: 2rem !important;
+  justify-content: center !important;
+  align-items: center !important;
+  margin: 1rem 0;
+}
+select:not(select.ruleGroup-combinators),input{
+  width: 22rem !important;
+  background-color: transparent !important;
+  border-bottom: .1rem solid white !important;
+  color:#fff !important;
+  font-size: 1.6rem !important;
+  padding:0 1rem;
+}
+
+
+.rule-remove{
+  display: none !important;
+}
+
+.ruleGroup-remove{
+  font-size: 1.6rem !important;
+cursor: pointer !important;
+background: #B03060 !important;
+text-decoration: none !important;
+width: 2rem !important;
+height: 2rem !important;
+color: #fff !important;
+}
+
+
+select option{
+  background: #B03060 !important;
+ color: #fff;
+ border: none;
+    }     
